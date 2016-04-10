@@ -1,11 +1,10 @@
 package com.pandf.r3flex;
 
 import android.content.Context;
-import android.content.res.TypedArray;
-import android.graphics.Color;
-import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Random;
 
 /**
@@ -19,21 +18,7 @@ public class UtilList {
 
     Context mContext;
 
-    private String getMatColor(String typeColor)
-    {
-        String returnColor = "#2C2C2C";
-        int arrayId = mContext.getResources().getIdentifier("mdcolor_" + typeColor, "array", mContext.getApplicationContext().getPackageName());
 
-        if (arrayId != 0)
-        {
-            TypedArray colors = mContext.getResources().obtainTypedArray(arrayId);
-            int index = (int) (Math.random() * colors.length());
-            returnColor = Integer.toHexString(colors.getColor(index, Color.BLACK));
-            colors.recycle();
-        }
-        Log.d("COLOR", returnColor);
-        return "#" + returnColor;
-    }
 
     public CircleModel[] getList(Context context, int nb) {
 
@@ -74,17 +59,18 @@ public class UtilList {
 
     private CircleModel[] get1itemlist() {
 
-        list.add("#3498db");
-        list.add("#e74c3c");
-        list.add("#2ecc71");
-        list.add("#e67e22");
         list.add("#1abc9c");
+        list.add("#2ecc71");
+        list.add("#3498db");
+        list.add("#34495e");
         list.add("#f1c40f");
+        list.add("#e67e22");
+        list.add("#e74c3c");
         Random random = new Random();
         int nb = random.nextInt(6);
 
         CircleModel circleModels[] = {
-                new CircleModel(getMatColor("400")),
+                new CircleModel(list.get(nb)),
 
         };
 
@@ -97,10 +83,11 @@ public class UtilList {
 
     private CircleModel[] get2itemlist() {
         CircleModel circleModels[] = {
-                new CircleModel(getMatColor("400")),
-                new CircleModel(getMatColor("500"))
+                new CircleModel("#3498db"),
+                new CircleModel("#e74c3c")
         };
 
+        Collections.shuffle(Arrays.asList(circleModels));
 
 
         return circleModels;
@@ -109,11 +96,12 @@ public class UtilList {
 
     private CircleModel[] get3itemlist() {
         CircleModel circleModels[] = {
-                new CircleModel(getMatColor("500")),
-                new CircleModel(getMatColor("400")),
-                new CircleModel(getMatColor("600"))
+                new CircleModel("#3498db"),
+                new CircleModel("#2ecc71"),
+                new CircleModel("#e74c3c")
         };
 
+        Collections.shuffle(Arrays.asList(circleModels));
 
 
         return circleModels;
@@ -121,12 +109,16 @@ public class UtilList {
     }
 
     private CircleModel[] get4itemlist() {
+
         CircleModel circleModels[] = {
-                new CircleModel(getMatColor("400")),
-                new CircleModel(getMatColor("600")),
-                new CircleModel(getMatColor("500")),
-                new CircleModel(getMatColor("700"))
+                new CircleModel("#3498db"),
+                new CircleModel("#f1c40f"),
+                new CircleModel("#e74c3c"),
+                new CircleModel("#2ecc71")
+
         };
+
+        Collections.shuffle(Arrays.asList(circleModels));
 
 
         return circleModels;
@@ -135,13 +127,14 @@ public class UtilList {
 
     private CircleModel[] get5itemlist() {
         CircleModel circleModels[] = {
-                new CircleModel(getMatColor("600")),
-                new CircleModel(getMatColor("400")),
-                new CircleModel(getMatColor("700")),
-                new CircleModel(getMatColor("500")),
-                new CircleModel(getMatColor("800"))
+                new CircleModel("#f1c40f"),
+                new CircleModel("#2ecc71"),
+                new CircleModel("#3498db"),
+                new CircleModel("#34495e"),
+                new CircleModel("#e74c3c")
         };
 
+        Collections.shuffle(Arrays.asList(circleModels));
 
 
         return circleModels;
@@ -150,14 +143,15 @@ public class UtilList {
 
     private CircleModel[] get6itemlist() {
         CircleModel circleModels[] = {
-                new CircleModel(getMatColor("400")),
-                new CircleModel(getMatColor("700")),
-                new CircleModel(getMatColor("500")),
-                new CircleModel(getMatColor("800")),
-                new CircleModel(getMatColor("600")),
-                new CircleModel(getMatColor("900"))
+                new CircleModel("#34495e"),
+                new CircleModel("#f1c40f"),
+                new CircleModel("#9b59b6"),
+                new CircleModel("#2ecc71"),
+                new CircleModel("#3498db"),
+                new CircleModel("#e74c3c")
         };
 
+        Collections.shuffle(Arrays.asList(circleModels));
 
 
         return circleModels;

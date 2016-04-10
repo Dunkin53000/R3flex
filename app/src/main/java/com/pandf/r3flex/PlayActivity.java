@@ -211,6 +211,10 @@ public class PlayActivity extends AppCompatActivity implements SheetLayout.OnFab
         text.setVisibility(View.VISIBLE);
         text.setText("Player " + player + " won");
 
+        if (player == 1) {
+            text.setRotation(180);
+        }
+
         mSheetLayout = (SheetLayout) findViewById(R.id.bottom_sheet);
         mFabretry = (FloatingActionButton) findViewById(R.id.fabretry);
         mFabreturn = (FloatingActionButton) findViewById(R.id.fabreturn);
