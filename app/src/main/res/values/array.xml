@@ -88,14 +88,11 @@
         <item name="pink_400" type="color">#ec407a</item>
         <item name="purple_400" type="color">#ab47bc</item>
         <item name="indigo_400" type="color">#5c6bc0</item>
-        <item name="cyan_400" type="color">#26c6da</item>
         <item name="teal_400" type="color">#26a69a</item>
         <item name="green_400" type="color">#2baf2b</item>
         <item name="yellow_400" type="color">#ffee58</item>
     </array>
     <array name="mdcolor_500">
-        <item name="indigo_500" type="color">#3f51b5</item>
-        <item name="cyan_500" type="color">#00bcd4</item>
         <item name="teal_500" type="color">#009688</item>
         <item name="lime_500" type="color">#cddc39</item>
         <item name="orange_500" type="color">#ff9800</item>
@@ -104,12 +101,9 @@
     </array>
     <array name="mdcolor_600">
         <item name="red_600" type="color">#dd191d</item>
-        <item name="pink_600" type="color">#d81b60</item>
-        <item name="purple_600" type="color">#8e24aa</item>
         <item name="indigo_600" type="color">#3949ab</item>
         <item name="cyan_600" type="color">#00acc1</item>
         <item name="teal_600" type="color">#00897b</item>
-        <item name="orange_600" type="color">#fb8c00</item>
         <item name="deep_orange_600" type="color">#f4511e</item>
     </array>
     <array name="mdcolor_700">
@@ -117,10 +111,8 @@
         <item name="indigo_700" type="color">#303f9f</item>
         <item name="cyan_700" type="color">#0097a7</item>
         <item name="green_700" type="color">#0a7e07</item>
-        <item name="lime_700" type="color">#afb42b</item>
         <item name="orange_700" type="color">#f57c00</item>
         <item name="deep_orange_700" type="color">#e64a19</item>
-        <item name="blue_grey_700" type="color">#455a64</item>
     </array>
     <array name="mdcolor_800">
         <item name="purple_800" type="color">#6a1b9a</item>
