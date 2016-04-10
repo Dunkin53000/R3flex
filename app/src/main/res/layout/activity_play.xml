@@ -57,7 +57,52 @@
         android:layout_height="wrap_content"
         android:text="Player : won"
         android:id="@+id/textViewwin"
-        android:layout_gravity="left|center_vertical"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:textSize="35dp"
+        android:textStyle="normal" />
+
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabretry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="16dp"
+        android:src="@drawable/ic_reload_white_48dp"
+        app:borderWidth="0dp"
+        app:fabSize="normal"
+        app:rippleColor="?attr/colorPrimary"
+        android:layout_gravity="bottom|right"
         android:visibility="gone" />
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabreturn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="16dp"
+        android:src="@drawable/ic_arrow_left_white_48dp"
+        app:borderWidth="0dp"
+        app:fabSize="normal"
+        app:rippleColor="?attr/colorPrimary"
+        android:layout_gravity="bottom|left"
+        android:layout_marginLeft="16dp"
+        android:visibility="gone" />
+
+    <com.github.fabtransitionactivity.SheetLayout
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom|right"
+        app:ft_container_gravity="center"
+        app:ft_color="?attr/colorAccent"
+        android:elevation="2dp"/>
 
 </FrameLayout>

@@ -1,6 +1,8 @@
 package com.pandf.r3flex;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -30,6 +32,10 @@ public class MainActivity extends AppCompatActivity implements SheetLayout.OnFab
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        final SharedPreferences prefs = this.getSharedPreferences(
+                "com.pandf.r3flex", Context.MODE_PRIVATE);
+
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
@@ -48,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements SheetLayout.OnFab
         });
         final TextView textcouleur = (TextView) findViewById(R.id.textViewcouleur);
         final SeekBar seek = (SeekBar) findViewById(R.id.seekBar);
+        seek.setProgress(prefs.getInt("colors", 3));
 
         textcouleur.setText("Nombre de couleurs : " + seek.getProgress());
         seek.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -56,10 +63,11 @@ public class MainActivity extends AppCompatActivity implements SheetLayout.OnFab
 
                 if (progress == 0) {
                     seek.setProgress(3);
+                    prefs.edit().putInt("colors", 3).apply();
                     textcouleur.setText("Nombre de couleurs : 3");
                 } else {
 
-
+                    prefs.edit().putInt("colors", progress).apply();
                     textcouleur.setText("Nombre de couleurs : " + progress);
                 }
             }
@@ -75,16 +83,18 @@ public class MainActivity extends AppCompatActivity implements SheetLayout.OnFab
 
         final TextView textsecondes = (TextView) findViewById(R.id.textViewsec);
         final SeekBar seeksec = (SeekBar) findViewById(R.id.seekBarsec);
+        seeksec.setProgress(prefs.getInt("sec", 3));
         textsecondes.setText("Secondes limite : " + seeksec.getProgress());
         seeksec.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 if (progress == 0) {
                     seeksec.setProgress(3);
+                    prefs.edit().putInt("sec", 3).apply();
                     textsecondes.setText("Secondes limites : 3");
                 } else {
 
-
+                    prefs.edit().putInt("sec", progress).apply();
                     textsecondes.setText("Secondes limites : " + progress);
                 }
             }
