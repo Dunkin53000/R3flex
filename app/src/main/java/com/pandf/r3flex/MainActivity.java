@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements SheetLayout.OnFab
         final SeekBar seek = (SeekBar) findViewById(R.id.seekBar);
         seek.setProgress(prefs.getInt("colors", 3));
 
-        textcouleur.setText("Nombre de couleurs : " + seek.getProgress());
+        textcouleur.setText(getResources().getString(R.string.slider_1) +" : " + seek.getProgress());
         seek.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -64,11 +64,11 @@ public class MainActivity extends AppCompatActivity implements SheetLayout.OnFab
                 if (progress == 0) {
                     seek.setProgress(3);
                     prefs.edit().putInt("colors", 3).apply();
-                    textcouleur.setText("Nombre de couleurs : 3");
+                    textcouleur.setText(getResources().getString(R.string.slider_1) +" : 3" );
                 } else {
 
                     prefs.edit().putInt("colors", progress).apply();
-                    textcouleur.setText("Nombre de couleurs : " + progress);
+                    textcouleur.setText(getResources().getString(R.string.slider_1) +" : " + progress);
                 }
             }
             @Override
@@ -84,18 +84,18 @@ public class MainActivity extends AppCompatActivity implements SheetLayout.OnFab
         final TextView textsecondes = (TextView) findViewById(R.id.textViewsec);
         final SeekBar seeksec = (SeekBar) findViewById(R.id.seekBarsec);
         seeksec.setProgress(prefs.getInt("sec", 3));
-        textsecondes.setText("Secondes limite : " + seeksec.getProgress());
+        textsecondes.setText(getResources().getString(R.string.slider_2) +" : " + seeksec.getProgress());
         seeksec.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 if (progress == 0) {
                     seeksec.setProgress(3);
                     prefs.edit().putInt("sec", 3).apply();
-                    textsecondes.setText("Secondes limites : 3");
+                    textsecondes.setText(getResources().getString(R.string.slider_2) +" : 3");
                 } else {
 
                     prefs.edit().putInt("sec", progress).apply();
-                    textsecondes.setText("Secondes limites : " + progress);
+                    textsecondes.setText(getResources().getString(R.string.slider_2) +" : " + progress);
                 }
             }
 
@@ -145,5 +145,16 @@ public class MainActivity extends AppCompatActivity implements SheetLayout.OnFab
         if(requestCode == 53){
             mSheetLayout.contractFab();
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+
+        return;
     }
 }

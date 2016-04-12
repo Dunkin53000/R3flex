@@ -250,4 +250,13 @@ public class PlayActivity extends AppCompatActivity implements SheetLayout.OnFab
         Intent intent = new Intent(this, MainActivity.class);
         startActivityForResult(intent, 54);
     }
+
+    @Override
+    public void onBackPressed() {
+
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivityForResult(intent, 54);
+
+        return;
+    }
 }
