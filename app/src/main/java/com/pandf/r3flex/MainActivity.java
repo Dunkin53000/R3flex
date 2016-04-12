@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements SheetLayout.OnFab
         setContentView(R.layout.activity_main);
 
         mSheetLayout = (SheetLayout) findViewById(R.id.bottom_sheet);
+        final FloatingActionButton mFab2 = (FloatingActionButton) findViewById(R.id.fab2);
         mFab = (FloatingActionButton) findViewById(R.id.fab);
 
         mSheetLayout.setFab(mFab);
@@ -54,12 +55,14 @@ public class MainActivity extends AppCompatActivity implements SheetLayout.OnFab
         mFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                mFab2.hide();
                 mSheetLayout.expandFab();
             }
         });
 
 
-        FloatingActionButton mFab2 = (FloatingActionButton) findViewById(R.id.fab2);
+
         mFab2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

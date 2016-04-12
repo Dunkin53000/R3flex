@@ -1,13 +1,12 @@
 package com.pandf.r3flex;
 
-import android.graphics.Bitmap;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * Created by pierre on 09/04/2016.
@@ -41,9 +40,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
         // - get data from your itemsData at this position
         // - replace the contents of the view with that itemsData
-        Bitmap image = Bitmap.createBitmap(100, 100, Bitmap.Config.ARGB_8888);
-        image.eraseColor(Color.parseColor(itemsData[position].getColor()));
-        viewHolder.circleimage.setImageBitmap(image);
+
+
+        viewHolder.mFab.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor(itemsData[position].getColor())));
 
 
 
@@ -53,11 +52,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
 
-        public CircleImageView circleimage;
+
+        public FloatingActionButton mFab;
 
         public ViewHolder(View itemLayoutView) {
             super(itemLayoutView);
-            circleimage = (CircleImageView) itemLayoutView.findViewById(R.id.profile_image);
+
+            mFab = (FloatingActionButton) itemLayoutView.findViewById(R.id.fabgame);
         }
     }
 

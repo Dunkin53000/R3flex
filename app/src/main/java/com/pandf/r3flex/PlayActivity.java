@@ -226,6 +226,7 @@ public class PlayActivity extends AppCompatActivity implements SheetLayout.OnFab
         mFabreturn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mFabretry.hide();
                 mSheetLayout.expandFab();
             }
         });
