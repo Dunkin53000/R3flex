@@ -87,7 +87,20 @@
         </LinearLayout>
     </LinearLayout>
 
-
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="16dp"
+        android:src="@drawable/ic_information_outline_white_48dp"
+        app:borderWidth="0dp"
+        app:fabSize="normal"
+        app:rippleColor="?attr/colorPrimary"
+        android:layout_marginTop="222dp"
+        android:layout_marginLeft="16dp" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"

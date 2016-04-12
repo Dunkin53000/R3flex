@@ -3,4 +3,6 @@
 
     <string name="slider_1">Nombre de couleurs</string>
     <string name="slider_2">Ecart de secondes</string>
+
+    <string name="info">Merci pour votre téléchargement! Vous pouvez commenter notre page Play Store et n\'oubliez pas de noter 5 étoiles. Développé fièrement par PandF Studios</string>
 </resources>

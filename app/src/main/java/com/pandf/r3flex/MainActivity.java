@@ -3,7 +3,9 @@ package com.pandf.r3flex;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -11,7 +13,10 @@ import android.view.WindowManager;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.afollestad.materialdialogs.DialogAction;
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.github.fabtransitionactivity.SheetLayout;
+import com.github.javiersantos.materialstyleddialogs.MaterialStyledDialog;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -52,6 +57,35 @@ public class MainActivity extends AppCompatActivity implements SheetLayout.OnFab
                 mSheetLayout.expandFab();
             }
         });
+
+
+        FloatingActionButton mFab2 = (FloatingActionButton) findViewById(R.id.fab2);
+        mFab2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new MaterialStyledDialog(MainActivity.this)
+                        .setTitle("R3flex")
+                        .setDescription(getResources().getString(R.string.info))
+                        .setHeaderColor(R.color.colorGreen)
+                        .setIcon(getResources().getDrawable(R.drawable.ic_information_outline_white_48dp))
+                        .setPositive("Ok", new MaterialDialog.SingleButtonCallback() {
+                            @Override
+                            public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                                dialog.dismiss();
+                            }
+                        })
+                        .setNegative("Play Store", new MaterialDialog.SingleButtonCallback() {
+                            @Override
+                            public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.pandf.r3flex"));
+                                startActivity(browserIntent);
+                            }
+                        })
+                        .show();
+            }
+        });
+
+
         final TextView textcouleur = (TextView) findViewById(R.id.textViewcouleur);
         final SeekBar seek = (SeekBar) findViewById(R.id.seekBar);
         seek.setProgress(prefs.getInt("colors", 3));

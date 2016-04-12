@@ -3,4 +3,6 @@
 
     <string name="slider_1">Number of colors</string>
     <string name="slider_2">Range for the seconds</string>
+
+    <string name="info">Thank you for downloading this app ! You can comment our Play Store page and give it 5 stars if you want. Proudly developed by PandF Studios</string>
 </resources>
